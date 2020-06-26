@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品评论情感分析系统</title>
+    <style type="text/css">
+    #header{background-color:#787878; height:150px}
+    #content{height:400px}
+    #footer{background-color:#787878;height:40px}
+    .p1{font-weight: bold; font-size:300%; text-align: center;line-height:150px;color:#FFFFFF;}
+    .p2{text-align: center;color:#FFFFFF;font-size:120%;line-height:40px;}
+    .p3{text-align: center;font-size:200%;line-height:300px;}
+    .p4{font-size:200%;}
+    .left{width: 50%;float: left;}
+    .right{width: 50%;float: right;}
+    .form-in{height:50px;width:570px;box-sizing: border-box;}
+    input[type=submit]{
+ 			width: 100px;
+ 			height: 50px;
+ 		}
+</style>
+
+</head>
+<body>
+<div id="header"><p class="p1">商品评论情感识别系统</p></div>
+<div id="content">
+    <div class="left">
+        <p class="p3">情感分析分类器</p>
+    </div>
+    <div class="right">
+        <p class="p4">请输入评论文本：</p>
+        <form action="/analysis_action/" method="post">
+            {% csrf_token %}
+            <input type="text" name="text" size="35" class="form-in">
+            <br>
+            <br>
+            <input type="submit" name="提交">
+        </form>
+    </div>
+</div>
+</body>
+</html>
